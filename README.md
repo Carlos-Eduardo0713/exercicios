@@ -1,2 +1,2 @@
-# exercícios
-primeiro repositório
+# Exercícios
+Primeiro repositório
