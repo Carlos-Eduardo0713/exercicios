@@ -1,0 +1,2 @@
+# exercícios
+primeiro repositório
