@@ -1,5 +1,3 @@
-package curso_programacao.exercícios;
-
 import java.util.Locale;
 import java.util.Scanner;
 

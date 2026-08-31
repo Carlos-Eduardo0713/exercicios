@@ -1,5 +1,3 @@
-package curso_programacao.exercícios;
-
 import java.util.Scanner;
 
 public class exercícios_função_ehPar {
