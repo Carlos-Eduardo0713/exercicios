@@ -1,5 +1,3 @@
-package curso_programacao.exercícios;
-
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -11,39 +9,16 @@ public class exercício_função_relatório_deuma_turma {
 		Scanner sc = new Scanner(System.in);
 
 
-        double[][] notas = preencherNotas();
+        double[][] notas = preencherNotas(sc);
         double[] medias = calcularMedia(notas);
         String[] situacoes = verificarSituacao(medias);
 
-        //mostrarRelatorio(double notas, double[] medias, String[] situacoes);
-
-        for (int i = 0; i < notas.length; i++) {
-            for (int j = 0; j < notas[i].length; j++) {
-                System.out.print(notas[i][j] + " ");
-            }
-            System.out.println();
-        }
-
-        for (int i = 0; i < medias.length; i++) {
-            System.out.printf("\nMédia do %d° aluno: %.2f", i+1, medias[i]);
-        }
-        System.out.println();
-
-        for (int i = 0; i < situacoes.length; i++) {
-            System.out.printf("\n%d° aluno: %s", i+1, situacoes[i]);
-        }
-        System.out.println();
-
-        System.out.printf("\nMaior média da turma: %.2f",maiorMedia(medias));
-        System.out.println();
-
-    System.out.printf("\nMédia geral da turma: %.2f", mediaGeral(medias));
+        mostrarRelatorio(notas, medias, situacoes);
 
         sc.close();
     }
-    
-    public static double[][] preencherNotas() {
-        Scanner sc = new Scanner(System.in);
+
+    public static double[][] preencherNotas(Scanner sc) {
         double[][] notas = new double[5][3];
 
         for (int i = 0; i < notas.length; i++) {
@@ -81,7 +56,7 @@ public class exercício_função_relatório_deuma_turma {
                 situacoes[i] = "Reprovado";
             }
         }
-        
+
         return situacoes;
     }
 
@@ -107,6 +82,23 @@ public class exercício_função_relatório_deuma_turma {
         return resultado;
     }
 
+    public static void mostrarRelatorio(double[][] notas, double[] medias,
+                                        String[] situacoes) {
+        System.out.print("-----Relatório-----");
+        for (int i = 0; i < notas.length; i++) {
+            System.out.printf("\n%dº Aluno:\n", i+1);
 
+            for (int j = 0; j < notas[i].length; j++) {
+                System.out.printf("%.2f ", notas[i][j]);
+            }
+
+            System.out.printf("| Média: %.2f | %s", medias[i], situacoes[i]);
+
+        }
+
+        System.out.println();
+        System.out.printf("\nMaior média da turma: %.2f",maiorMedia(medias));
+        System.out.println();
+        System.out.printf("\nMédia geral da turma: %.2f", mediaGeral(medias));
+    }
 }
-
