@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import util.Calculadora;
 
-public class Program3 {
+public class Program {
 	
 	public static void main(String[] args) {
 		
